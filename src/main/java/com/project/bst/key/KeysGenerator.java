@@ -34,7 +34,7 @@ public class KeysGenerator {
     private void readPC_1()throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("Key/PC-1.txt"));
         while(scanner.hasNext()){
-            PC_1.add(Integer.valueOf(scanner.next()));
+            PC_1.add(scanner.nextInt());
         }
         scanner.close();
     }
@@ -42,7 +42,7 @@ public class KeysGenerator {
     private void readPC_2()throws FileNotFoundException{
         Scanner scanner = new Scanner(new File("Key/PC-2.txt"));
         while (scanner.hasNext()){
-            PC_2.add(Integer.valueOf(scanner.next()));
+            PC_2.add(scanner.nextInt());
         }
         scanner.close();
     }

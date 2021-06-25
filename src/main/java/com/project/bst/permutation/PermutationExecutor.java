@@ -28,6 +28,13 @@ public class PermutationExecutor {
                 numberOfBytes=56;
                 break;
 
+            case EXPANSION_SBOX:
+                numberOfBytes=32;
+                break;
+
+            case PERMUTATION_SBOX:
+                numberOfBytes=32;
+
             default:
                 return 0L;
         }
