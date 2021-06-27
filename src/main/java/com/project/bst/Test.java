@@ -3,6 +3,8 @@ package com.project.bst;
 import com.project.bst.key.KeysGenerator;
 import com.project.bst.key.PART;
 import com.project.bst.key.ReadPCException;
+import com.project.bst.round.PARTNUMBER;
+import com.project.bst.round.Round;
 import com.project.bst.sBoxes.Sbox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +19,12 @@ public class Test {
     KeysGenerator keysGenerator;
     @Autowired
     Sbox sbox;
+    @Autowired
+    Round round;
 
     @RequestMapping(method = RequestMethod.GET, value = "hello")
-    public String sayHello(@RequestParam long key, int value) {
-        sbox.calculateSBOX(4037734570L,29699430183026L);
+    public String sayHello() {
+        System.out.println(round.calculateRound(1383827165325090801L,29699430183026L));
         return "Hello";
     }
 }
