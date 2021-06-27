@@ -97,12 +97,10 @@ public class KeysGenerator {
         long leftPart = readRightLeftPartKey(inputData,PART.LEFT);
         long rightPart = readRightLeftPartKey(inputData,PART.RIGHT);
 
-        System.out.println("0 "+leftPart+" "+rightPart);
 
         for(int i=1; i<=16; i++){
             leftPart = shiftLeftRightPart(leftPart,i,PART.LEFT);
             rightPart = shiftLeftRightPart(rightPart,i,PART.RIGHT);
-            System.out.println(i+" "+leftPart+" "+rightPart);
             inputData = permutationExecutor.executePermutation((leftPart | rightPart),PC_2,TYPE_PERMUTATION.PC2);
             resultKeys.add(inputData);
         }

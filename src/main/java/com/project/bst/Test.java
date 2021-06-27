@@ -1,5 +1,7 @@
 package com.project.bst;
 
+import com.project.bst.des.DesExecutor;
+import com.project.bst.des.OPTION;
 import com.project.bst.key.KeysGenerator;
 import com.project.bst.key.PART;
 import com.project.bst.key.ReadPCException;
@@ -21,10 +23,13 @@ public class Test {
     Sbox sbox;
     @Autowired
     Round round;
+    @Autowired
+    DesExecutor des;
 
     @RequestMapping(method = RequestMethod.GET, value = "hello")
     public String sayHello() {
-        System.out.println(round.calculateRound(1383827165325090801L,29699430183026L));
+        long data = des.useDES(1383827165325090801L,29699430183026L, OPTION.CODE);
+        System.out.println(des.useDES(data,29699430183026L,OPTION.DECODE));
         return "Hello";
     }
 }

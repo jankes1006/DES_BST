@@ -105,7 +105,6 @@ public class Sbox {
     }
 
     public long calculateSBOX(long data, long key) {
-        System.out.println(ExpansionTable);
         long input = permutationExecutor.executePermutation(data, ExpansionTable, TYPE_PERMUTATION.EXPANSION_SBOX);
         input = (input ^ key) & (0xFFFFFFFFFFFFL);
 

@@ -19,22 +19,30 @@ public class PermutationExecutor {
 
         int numberOfBytes;
 
-        switch (typePermutation){
+        switch (typePermutation) {
             case PC1:
-                numberOfBytes=64;
+                numberOfBytes = 64;
                 break;
 
             case PC2:
-                numberOfBytes=56;
+                numberOfBytes = 56;
                 break;
 
             case EXPANSION_SBOX:
-                numberOfBytes=32;
+                numberOfBytes = 32;
                 break;
 
             case PERMUTATION_SBOX:
-                numberOfBytes=32;
+                numberOfBytes = 32;
+                break;
 
+            case INITIAL_PERMUTATION:
+                numberOfBytes = 64;
+                break;
+
+            case FINAL_PERMUTATION:
+                numberOfBytes = 64;
+                break;
             default:
                 return 0L;
         }
